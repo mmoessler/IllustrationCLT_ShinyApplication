@@ -1,0 +1,200 @@
+---
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE,
+                      error = FALSE)
+```
+
+```{r, include=FALSE, echo=FALSE}
+
+# # set working directory
+# wd <- dirname(rstudioapi::getSourceEditorContext()$path)
+# setwd(wd)
+
+```
+
+````{=html}
+
+<style>
+
+/* body */
+body {
+  font-family: Helvetica;
+  font-size: 16pt;
+}
+
+/* title */
+h1.title {
+  font-size: 32pt;
+}
+
+/* subtitle */
+h2.subtitle {
+  font-size: 24pt;
+}
+
+/* author */
+h4.authur {
+  font-size: 16pt;
+}
+
+/* for collapsible button */
+.col_button {
+  margin-top: 5px;
+  margin-bottom: 5px; 
+  background-color: white;
+  color: #333333;
+  font-style: italic;
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid;
+  border-color: #cccccc;
+  text-align: left;
+  outline: none;
+  font-family: Helvetica;
+  font-size: 16pt;
+}
+
+/* for collapsible content */
+.col_content {
+  display: none;
+  background-color: #EAECEE;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+</style>
+
+````
+
+<!--..........................................................................-->
+<hr>
+
+<h1 class="title">Review, Application and Illustration of <br> Statistical Concepts</h1>
+
+<!--..........................................................................-->
+<hr>
+
+<h2 class="subtitle">Illustration of the Law of Large Numbers (LLN) and the Central Limit Theorem (CLT)</h2>
+
+<!--..........................................................................-->
+<!--<hr>-->
+
+<h4 class="author"><em>by Markus Mößler</em></h4>
+
+<!-- .................................................. -->
+<hr>
+
+<span style="text-decoration: underline; font-size: 18pt">Instructions</span><span style="font-size: 18pt">: Input</span>
+
+The *app* below contains an *illustration of the central limit theorem (CLT)*.
+
+Use the *first slider* to change the value of the *sample size* $N$.
+
+Use the *second slider* to change the value of the *probability of success* $p$ for the *Bernoulli Random Variable*.
+
+
+
+<!-- .................................................. -->
+<hr>
+
+<span style="text-decoration: underline; font-size: 18pt">Explanation</span><span style="font-size: 18pt">: Output</span>
+
+The first plot (*Sampling Distribution of Sample Average*) shows the histogram of the *sample average* of a *Bernoulli Random Variable* with *probability of success* $p$. 
+
+The second plot (*Sampling Distribution of Standardized Sample Average*) shows the histogram of the *standardized sample average* of a *Bernoulli Random Variable* with *probability of success* $p$. 
+
+The standardization follows:
+
+\begin{align}
+Z_{\overline{Y}} = \frac{ \overline{Y} - \mu_{\overline{Y}}}{\sigma_{\overline{Y}}}
+\end{align}
+
+For more information see Stock and Watson (2020) on page 86ff.
+
+
+
+<!-- .................................................. -->
+<hr>
+
+<span style="text-decoration: underline; font-size: 20pt">Bernoulli Random Variable</span>
+
+<!-- ## Bernoulli Random Variable -->
+
+<hr>
+
+```{r ill_01, echo=FALSE, warning=FALSE, message=FALSE, include=TRUE}
+shinyAppDir(appDir = "./ShinyApplication_01",
+            options = list(width = "100%", height = 1000
+  )
+)
+```
+
+
+
+<!-- .................................................. -->
+<hr>
+
+<span style="text-decoration: underline; font-size: 24pt">Interpretation</span>
+
+<hr>
+
+<span style="text-decoration: underline; font-size: 18pt">Law of Large Numbers (LLN)</span><span style="font-size: 18pt">: Consistency</span>
+
+As the *sample size* $N$ grows the (absolute) frequency of observing a *sample average* $\overline{Y}$ accumulates around the *population mean* $\mu$, i.e.,
+
+\begin{align}
+\overline{Y} \xrightarrow{p} \mu_{\overline{Y}}
+\end{align}
+
+See Figure 1 above.
+
+
+
+<!-- .................................................. -->
+<hr>
+
+<span style="text-decoration: underline; font-size: 18pt">Central Limit Theorem (CLT)</span><span style="font-size: 18pt">: Asymptotic Normality</span>
+
+As the *sample size* $N$ grows the (relative) frequency of the observed *standardized sample average* $Z_{\overline{Y}}$ gets closer to the *probability density* of the *standard normal distribution*, i.e., 
+
+\begin{align}
+Z_{\overline{Y}} \xrightarrow{d} N\left( \mu_{\overline{Y}}, \sigma^{2}_{\overline{Y}} \right)
+\end{align}
+
+See Figure 2 above.
+
+
+
+
+
+````{=html}
+
+<script>
+
+var coll = document.getElementsByClassName("col_button");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+</script>
+
+````
+
+

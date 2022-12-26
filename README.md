@@ -15,7 +15,7 @@ To run the application on your local computer, please follow the instructions be
     1) closing the browser window
     2) clicking into the console pane and hitting ESC.
 
-# Illustrations
+# Illustration
 
 Illustration of the Central Limit Theorem (CLT)
 

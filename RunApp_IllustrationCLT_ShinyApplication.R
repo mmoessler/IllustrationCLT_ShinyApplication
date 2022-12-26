@@ -80,7 +80,7 @@ run_app <- function (url = "https://github.com/mmoessler/IllustrationCLT_ShinyAp
   # runApp(appdir)
   
   # file.path <- file.path(appdir, "ShinyDocument.rmd")
-  file.path <- file.path(appdir, "IllustrationHypothesisTest_ShinyApplication/ShinyDocument.rmd")
+  file.path <- file.path(appdir, "IllustrationCLT_ShinyApplication/ShinyDocument.rmd")
   file.path
   
   rmarkdown::run(file = file.path,

@@ -21,6 +21,6 @@ Illustration of the Central Limit Theorem (CLT)
 
 ```
 
-source("https://raw.githubusercontent.com/mmoessler/IllustrationCLT_SinyApplication/main/RunApp_IllustrationCLT_ShinyApplication.R")
+source("https://raw.githubusercontent.com/mmoessler/IllustrationCLT_ShinyApplication/main/RunApp_IllustrationCLT_ShinyApplication.R")
 
 ```
